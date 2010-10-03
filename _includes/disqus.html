@@ -1,5 +1,11 @@
 <script type="text/javascript">
-    var disqus_identifier = "{{ page.title | remove:' ' }}";
+    var title = "{{ page.date }}";
+var did = '';
+if(title == '')
+    did = "{{ site.posts.first.title | remove:' ' }}";
+else
+    did = "{{ page.title | remove:' ' }}"
+    var disqus_identifier = "trickeries."+did;
   (function() {
    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
    dsq.src = 'http://trickeries.disqus.com/embed.js';
@@ -9,7 +15,7 @@
 
 <script type="text/javascript">
 var disqus_shortname = 'trickeries';
-var disqus_developer = true;
+var disqus_developer = false;
 (function () {
   var s = document.createElement('script'); s.async = true;
   s.src = 'http://disqus.com/forums/trickeries/count.js';
