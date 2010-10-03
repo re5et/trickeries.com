@@ -1,0 +1,17 @@
+auto:        false
+server:      false
+server_port: 4000
+
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+
+pygments:    true
+paginate:    5
+
+permalink:   /archive/:title
+
+haml_folder: **/*.haml
+sass_folder: **/*.sass
+
+paths: [archive, projects, me]

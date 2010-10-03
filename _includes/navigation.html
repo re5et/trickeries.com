@@ -1,0 +1,14 @@
+{% if page.url == '/' %}
+{% assign home = true %}
+{% else %}
+{% assign home = false %}
+{% endif %}
+{% if home == false %}
+<li><a href="/">~/</a>
+{% endif %}
+{% for path in site.paths %}
+{% capture uri %}/{{ path }}/{% endcapture %}
+{% if page.url != uri %}
+<li><a href="{{ uri }}">{% if home == false %}.{% endif %}{% if page.is_post %}./.{% endif %}./{{ path }}</a></li>
+{% endif %}
+{% endfor %}

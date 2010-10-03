@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="alternate" type="application/atom+xml" title="trickeries.com feed" href="/feed/" />
+        <link href="/assets/css/trickeries.css" media="screen" rel="stylesheet" type="text/css" />
+	{% for stylesheet in page.stylesheets %}
+	<link href="/assets/css/{{ stylesheet }}.css" media="screen" rel="stylesheet" type="text/css" />
+	{% endfor %}
+	<script src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js"></script>
+	<script src="/assets/js/mootools-more.js"></script>
+	<script src="/assets/js/github-repo-widget.js"></script>
+	<script src="/assets/js/trickeries.js"></script>
+	{% for script in page.scripts %}
+	<script src="/assets/js/{{ script }}.js"></script>
+	{% endfor %}
+        <title>trickeries! &raquo; {{ page.title }}</title>
+    </head>
+    <body>
+        <div id="container">
+	    <header>
+		<div id="prompt1">
+		    <a id="user" href="/me">re5et</a>@<a id="host" href="/">trickeries.com</a>:<a id="path" href="{{ page.url }}">~{{ page.url }}</a><span id="git">^</span><a id="branch" href="http://github.com/re5et/trickeries.com">master </a><span id="status">&hearts;</span>
+		</div>
+		<div id="prompt2">
+		   <span>%</span>
+		   <span id="command"> cd </span>
+		   <span id="cursor">||||||||||</span>
+		   <span id="hint">hit tab&#8230;</span>
+		   <nav>
+		       <ul>
+			   {% include navigation.html %}
+			   <li class="icon"><a href="http://github.com/re5et"><img src="/assets/images/icon-github.png" alt="re5et on github" /></a></li>
+			   <li class="icon"><a href="http://twitter.com/re5et"><img src="/assets/images/icon-twitter.png" alt="re5et on twitter" /></a></li>
+		       </ul>
+		   </nav>
+		</div>
+	    </header>
+            <div id="content">
+                {{ content }}
+            </div>
+	    <footer>
+		<nav>
+		    <ul>
+			{% include navigation.html %}
+		    </ul>
+		</nav>
+	    </footer>
+        </div>
+	{% include ga.html %}
+    </body>
+</html>

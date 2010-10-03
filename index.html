@@ -1,0 +1,15 @@
+---
+layout: default
+title: its tricky to rock a style thats liked online.
+permalink: /
+---
+{% assign most_recent = site.posts.first %}
+<article>
+    <hgroup>
+	<h2 class="title"><a href="{{ most_recent.url }}">{{ most_recent.title }}</a></h2>
+	<h6 class="date">posted {{ most_recent.date | date: "%Y.%m.%d" }}</h6>
+    </hgroup>
+  <div class="post">{{ most_recent.content }}</div>
+</article>
+<div id="disqus_thread"></div>
+{% include disqus.html %}
