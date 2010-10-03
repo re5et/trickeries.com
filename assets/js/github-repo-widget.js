@@ -1,3 +1,21 @@
+/*
+---
+script: github-repo-widget.js
+
+description: Github repo widget, fetches repo information from github and displays it
+
+license: MIT-style
+
+authors: [atom smith]
+
+requires:
+- core/1.2.4: [Class.Extras, Element.Event, Element.Style, Selectors]
+- more/1.2.4.4: [Request.JSONP]
+
+provides: [GithubRepoWidget]
+...
+*/
+
 var GithubRepoWidget = new Class({
 
     'Implements': [Options, Events],
@@ -25,6 +43,7 @@ var GithubRepoWidget = new Class({
 
     'loading': function(){
 	this.options.injectInto.grab(new Element('span', {
+	    'class': 'github-repo-widget-loading',
 	    'text': 'loading github repo widget...'
 	}));
     },
@@ -32,7 +51,7 @@ var GithubRepoWidget = new Class({
     'getInfo': function(){
 	new Request.JSONP({
 	    'url': this.requestUrl,
-	    'onSuccess': function(response){
+	    'onComplete': function(response){
 		this.repo = response.repository;
 		if(this.options.buildWidget)
 		{
@@ -50,8 +69,6 @@ var GithubRepoWidget = new Class({
     'buildWidget': function(){
 
 	var container = new Element(this.options.containerElement, this.options.containerOptions);
-
-
 
 	var main = new Element('div', {
 	    'class': 'main'
@@ -197,31 +214,3 @@ var GithubRepoWidget = new Class({
 	return container;
     }
 });
-
-GithubRepoWidget.hoverCards = function(){
-    var cards = [];
-    $$('a[href^="http://github.com"]').each(function(a){
-	var chunks = a.get('href').split('/');
-	var user = chunks[3];
-	var repo = chunks[4];
-	if(user && repo)
-	{
-	    var card = new GithubRepoWidget(user, repo).addEvent('complete', function(response, container){
-		container.setStyle('display','none');
-		$(document.body).grab(container);
-		container.addEvent('mouseleave', function(){
-		    container.setStyle('display', 'none');
-		})
-		a.addEvent('mouseenter', function(){
-		    container.position({
-	    		'relativeTo': a,
-	    		'position': 'upperleft'
-		    });
-	    	    container.setStyle('display', 'block');
-		});
-	    });
-	}
-	cards.push(card);
-    });
-    return cards;
-}
