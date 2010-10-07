@@ -1,0 +1,17 @@
+#menu1, #menu2{
+	list-style:none;
+	width:200px;
+}
+
+#menu1 li, #menu2 li{
+	padding:5px;
+	border:1px solid #222;
+}
+
+#menu1 li:focus, #menu2 li:focus{
+	background:#222;
+}
+
+#menu1 li:hover, #menu2 li:hover{
+	border-color:#444;
+}
