@@ -416,6 +416,10 @@ article .date{
     list-style:none;
 }
 
+#projects > ul > li{
+	margin-bottom:10px;
+}
+
 #bio{
     width:400px;
     float:left;
@@ -452,6 +456,7 @@ article .date{
     overflow:auto;
     letter-spacing:-1px;
     margin: 15px 0;
+	border:1px dashed #222;
 }
 
 #disqus_thread{
