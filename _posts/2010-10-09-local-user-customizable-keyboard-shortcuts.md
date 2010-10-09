@@ -19,20 +19,20 @@ Add some shortcuts:
 
 {% highlight js %}
 myKeyboard.addShortcuts({
-	'logSomething': {
-		'keys': 'ctrl+alt+l',
-		'description': 'logs "something".',
-		'handler': function(){
-			console.log('something');
-		}
-	},
-	'alertSomething': {
-		'keys': 'a',
-		'description': 'alerts "something"',
-		'handler': function(){
-			alert('something');
-		}
-	}
+    'logSomething': {
+        'keys': 'ctrl+alt+l',
+        'description': 'logs "something".',
+        'handler': function(){
+            console.log('something');
+        }
+    },
+    'alertSomething': {
+        'keys': 'a',
+        'description': 'alerts "something"',
+        'handler': function(){
+            alert('something');
+        }
+    }
 });
 {% endhighlight %}
 
@@ -52,9 +52,9 @@ You can also just add the two above methods as shortcuts for users to use:
 
 {% highlight js %}
 myKeyboard.addShortcut('showAndChangeShortcuts', {
-	'keys': 'm',
-	'description': 'Toggle this menu.',
-	'handler': myKeyboard.showAndChange
+    'keys': 'm',
+    'description': 'Toggle this menu.',
+    'handler': myKeyboard.showAndChange
 });
 {% endhighlight %}
 
@@ -62,9 +62,9 @@ and
 
 {% highlight js %}
 myKeyboard.addShortcut('restoreDefaults', {
-	'keys': 'd',
-	'description': 'Restore default shortcuts.',
-	'handler': myKeyboard.restoreDefaults
+    'keys': 'd',
+    'description': 'Restore default shortcuts.',
+    'handler': myKeyboard.restoreDefaults
 });
 {% endhighlight %}
 

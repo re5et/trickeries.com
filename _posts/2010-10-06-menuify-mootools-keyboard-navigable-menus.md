@@ -3,7 +3,7 @@ layout: post
 scripts: [http://github.com/re5et/Menuify/raw/master/Source/menuify.js]
 stylesheets: [/assets/css/menuify.css]
 ---
-Menuify is a MooTools class that allows you to create keyboard navigable menus from groups of elements.  I made this because I hace a number of projects coming down the line that I want to be able to use well with my keyboard.
+[Menuify](http://github.com/re5et/Menuify) is a MooTools class that allows you to create keyboard navigable menus from groups of elements.  I made this because I hace a number of projects coming down the line that I want to be able to use well with my keyboard.
 
 The main idea is to utilize existing brower features to achieve this, with a few added benefits.  Most everything is handled with the html attribute 'tabindex' and the css pseudo selector ':focus'.  The extras include adding arrow key navigation, as well as tabindex management so it doesn't screw with what is already there.  Checkout the demo below, or an extended demo here.
 
@@ -29,17 +29,17 @@ The menu below is a tad more complex. When focused the menu items will show the 
 {% highlight js %}
 new Menuify($$('#menu2 li')).addEvents({
     'focus': function(item){
-             item.set('text', item.get('text').hexToRgb())
-                                          item.setStyle('border-color', item.get('text'));
+        item.set('text', item.get('text').hexToRgb())
+        item.setStyle('border-color', item.get('text'));
     },
     'blur': function(item){
-            item.set('text', item.get('text').rgbToHex())
+        item.set('text', item.get('text').rgbToHex())
     },
     'keypress': function(item, event){
-                if(event.key == '+'){
-                             var width = item.getStyle('border-width');
-                             item.setStyle('border-width', width.replace('px', '').toInt() + 1 + 'px')
-                }
+        if(event.key == '+'){
+            var width = item.getStyle('border-width');
+            item.setStyle('border-width', width.replace('px', '').toInt() + 1 + 'px')
+        }
     }
 });
 {% endhighlight %}
