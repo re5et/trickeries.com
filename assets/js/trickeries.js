@@ -45,6 +45,8 @@ window.addEvent('domready', function(){
 		});
 	}
 
-	GithubRepoWidget.hoverCards();
+	GithubRepoWidget.hoverCards({
+		'linkClass': 'repo'
+	});
 
 });

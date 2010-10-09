@@ -26,6 +26,10 @@ GithubRepoWidget.hoverCards = function(options){
 		if(user && repo)
 		{
 			var card = new GithubRepoWidget(user, repo).addEvent('complete', function(response, container){
+				if($defined(options.linkClass))
+				{
+					a.addClass(options.linkClass);
+				}
 				container.setStyle('display','none');
 				$(document.body).grab(container);
 				container.addEvent('mouseleave', function(){

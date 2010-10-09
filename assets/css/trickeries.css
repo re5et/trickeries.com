@@ -500,7 +500,7 @@ article .date{
     color:#F00;
 }
 
-a[href^="http://github.com/"]{
+a.repo{
 	padding:1px 3px 1px 14px;
 	background:url(../images/icon-git.png) no-repeat 4px 5px;
 	border:1px dashed #222;
