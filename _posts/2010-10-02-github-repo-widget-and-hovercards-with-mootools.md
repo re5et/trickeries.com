@@ -1,6 +1,5 @@
 ---
 layout: post
-title: github widgets and hovercards with mootools
 ---
 I wanted something like this but couldn't find it anywhere so I made a MooTools class for it. This uses Request.JSONP to make a remote call to the github api to grab information about a repo.
 
