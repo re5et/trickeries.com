@@ -205,6 +205,10 @@ header{
     text-decoration:underline;
 }
 
+#percentage-sign{
+	color:#60F;
+}
+
 #cursor{
     text-decoration:blink;
     font-family:comic sans MS;
