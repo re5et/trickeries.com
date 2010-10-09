@@ -500,6 +500,14 @@ article .date{
     color:#F00;
 }
 
+a[href^="http://github.com/"]{
+	padding:1px 3px 1px 14px;
+	background:url(../images/icon-git.png) no-repeat 4px 5px;
+	border:1px dashed #222;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+
 .github-repo-widget{
     font-size:12px;
     font-family:Verdana, sans-serif;
@@ -518,9 +526,11 @@ article .date{
     margin:0;
 }
 
-.github-repo-widget a{
+.github-repo-widget a, #content .github-repo-widget a{
     color:#07F;
     text-decoration:none;
+	border:none;
+	padding:none;
 }
 
 .github-repo-widget a:hover{
@@ -541,6 +551,8 @@ article .date{
 
 .github-repo-widget .main a{
     font-weight:bold;
+	background:none;
+	padding:0;
 }
 
 .github-repo-widget .name{
