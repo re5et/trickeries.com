@@ -172,7 +172,7 @@ small, .small{
 
 body{
     background:#000;
-    color:#FFF;
+    color:#AAA;
     font-family:Verdana,sans-serif;
 }
 
@@ -185,6 +185,20 @@ a{
 a:hover, a:focus{
     color:#F0F;
     text-decoration:underline;
+}
+
+#content .bbpTweet a{
+    color: #00F;
+}
+
+blockquote{
+    padding:10px 20px;
+    background:#111;
+    border-left:10px solid #222;
+}
+
+blockquote strong{
+    color: #FF6;
 }
 
 #container{
