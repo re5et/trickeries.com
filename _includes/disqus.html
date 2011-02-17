@@ -1,6 +1,16 @@
 <script type="text/javascript">
-    var did = '{{ site.posts.first.title }}'
-    did = did.replace(/[^\w]/g, '')
+    var page_url = '{{ page.url }}'
+    var post_title = '{{ page.title }}';
+    var home_page_post_title = '{{ site.posts.first.title }}';
+
+    if(page_url != '/'){
+        did = post_title;
+    }
+    else{
+        did = home_page_post_title;
+    }
+
+    did = did.replace(/[^\w]/g, '');
     var disqus_identifier = "trickeries."+did;
   (function() {
    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
