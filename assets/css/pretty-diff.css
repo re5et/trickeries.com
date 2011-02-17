@@ -1,0 +1,28 @@
+.pretty-diff{
+    list-style:none;
+    padding:0;
+    margin:0;
+    background:#FFF;
+    font-family:monospace;
+    color:#333;
+    font-size:12px;
+}
+
+.pretty-diff li{
+    padding:2px 5px;
+    margin:0;
+}
+
+.pretty-diff ins, .pretty-diff del{
+    text-decoration:none;
+}
+
+.pretty-diff li.ins{
+    background:#CFC;
+    color:#070;
+}
+
+.pretty-diff li.del{
+    background:#FCC;
+    color:#700;
+}
