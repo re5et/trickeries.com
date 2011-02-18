@@ -1,24 +1,21 @@
 <script type="text/javascript">
-    var page_url = '{{ page.url }}'
-    var post_title = '{{ page.title }}';
-    var home_page_post_title = '{{ site.posts.first.title }}';
 
-    if(page_url != '/'){
-        did = post_title;
-    }
-    else{
-        did = home_page_post_title;
-    }
-
-    did = did.replace(/[^\w]/g, '');
-    var disqus_identifier = "trickeries."+did;
+		var discus_id = '{{page.disqus_id}}'
+		if(discus_id != ''){
+		var disqus_identifier = 'trickeries.'+discus_id
+		}
+		else
+		{
+		var permalink_path = $(document).getElement('h2.title a').get('href');
+		var disqus_identifier = permalink_path.replace(/[^\w]/g,'');
+		}
+    var disqus_url = 'http://trickeries.com' + permalink_path;
   (function() {
    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
    dsq.src = 'http://trickeries.disqus.com/embed.js';
    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
-
 <script type="text/javascript">
 var disqus_shortname = 'trickeries';
 (function () {
